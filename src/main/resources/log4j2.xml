@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+    <Properties>
+        <Property name="LOG_PATTERN">
+            %d{dd.MM.yyyy HH:mm:ss} %style{[%t]}{magenta} %highlight{%-5level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green} %style{%logger{36}}{cyan} - %msg %n %style{%throwable}{red}
+        </Property>
+    </Properties>
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}" disableAnsi="false"/>
+        </Console>
+
+        <File name="file" fileName="target/log4j-logs/app.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </File>
+    </Appenders>
+
+    <loggers>
+        <Root level="info">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="file"/>
+        </Root>
+    </loggers>
+
+</Configuration>

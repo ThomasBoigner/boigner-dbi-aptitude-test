@@ -1,0 +1,76 @@
+{
+    "title": "Department",
+    "type": "object",
+    "required": ["_id", "name"],
+    "properties": {
+        "_id": {
+            "type": "number",
+            "description": "unique identifier of a department"
+        },
+        "version": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string",
+            "description": "name of the department"
+        },
+        "datum": {
+            "bsonType": "date",
+            "description": "'datum' must be a date"
+        },
+        "entries": {
+            "bsonType": "array",
+            "description": "'entries' must be a array of bson objects",
+            "required": ["time", "student"],
+
+            "properties": {
+                "_id": {
+                    "bsonType": "number",
+                    "description": "unique identifier of a entry"
+                },
+                "version": {
+                    "bsonType": "string"
+                },
+                "time": {
+                    "bsonType": "time",
+                    "description": "'zeit' must be a date and is required"
+                },
+                "meetingLink": {
+                    "bsonType": "string",
+                    "description": "'meetingLink' must be a string"
+                },
+                "uploads": {
+                    "bsonType": "string[]",
+                    "description": "'uploads' is a array of the type string"
+                },
+                "student": {
+                    "bsonType": "object",
+                    "description": "'student' must be a bson object",
+                    "required": ["firstname", "lastname"],
+
+                    "properties": {
+                        "_id": {
+                            "bsonType": "number",
+                            "description": "unique identifier of a entry"
+                        },
+                        "version": {
+                            "bsonType": "string"
+                        },
+                        "firstname": {
+                            "bsonType": "string",
+                            "description": "'name' must be a string and is required"
+                        },
+                        "lastname": {
+                            "bsonType": "string",
+                            "description": "'name' must be a string and is required"
+                        },
+                        "email": {
+                            "bsonType": "string",
+                            "description": "'email' must be a string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

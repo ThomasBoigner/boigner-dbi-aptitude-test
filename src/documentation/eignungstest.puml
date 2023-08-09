@@ -1,0 +1,44 @@
+@startjson eignungstest
+{
+    'array of static strings
+    "name": "Art und design - Interior- und surfacedesign",
+    'dynamic date
+    "date": "20.01.2022",
+    'array of static entry documents
+    "entries": [
+        {
+            'static string
+            "time": "9:00",
+            'static string
+            "meetingLink": "Jitsi meet",
+            'static url or array of static files
+            "uploads": "Zu den Uploads",
+            "student":{
+                'static string
+                "firstname": "Thomas",
+                'static string
+                "lastname": "Boigner",
+                'static string
+                "email": "BOI19439@spengergasse.at"
+            }
+        },
+        {
+            'static string
+            "time": "9:15",
+            'static url
+            "meetingLink": "Jitsi meet",
+            'static url or array of static files
+            "uploads": "Zu den Uploads",
+            "student": {
+                'static string
+                "firstname": "Philipp",
+                'static string
+                "lastname": "Cserich",
+                'static string
+                "email": "CSE19454@spengergasse.at"
+
+            }
+        }
+    ]
+}
+@endjson

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wähle eine Abteilung aus!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="container">
+                <h1>Wähle eine Abteilung aus!</h1>
+                <a th:href="@{/department/create}" style="color: black">Erstelle eine neue Abteilung!</a>
+                <ul>
+                    <li th:each="department : ${departments}">
+                        <a th:text="${department.getName()}" th:href="@{/department/show/{id}(id=${department.get_id()})}" style="color: black;"></a>
+                        <button class="btn btn-secondary"><a th:href="@{/department/delete/{id}(id=${department.get_id()})}" style="color: white; text-decoration: none">Löschen</a></button>
+                        <button class="btn btn-secondary"><a th:href="@{/department/update/{id}(id=${department.get_id()})}" style="color: white; text-decoration: none">Update</a></button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

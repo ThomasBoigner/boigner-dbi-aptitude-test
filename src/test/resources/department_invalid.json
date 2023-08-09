@@ -1,0 +1,26 @@
+{
+  "_id": 71289,
+  "date": "20.01.2022",
+  "entries": [
+    {
+      "time": "9:00",
+      "meetingLink": "Jitsi meet",
+      "uploads": "Zu den Uploads",
+      "student": {
+        "firstname": "Thomas",
+        "lastname": "Boigner",
+        "email": "BOI19439@spengergasse.at"
+      }
+    },
+    {
+      "time": "9:15",
+      "meetingLink": "Jitsi meet",
+      "uploads": "Zu den Uploads",
+      "student": {
+        "firstname": "Philipp",
+        "lastname": "Cserich",
+        "email": "CSE19454@spengergasse.at"
+      }
+    }
+  ]
+}

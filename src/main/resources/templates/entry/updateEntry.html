@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update einen Eintrag</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<main>
+    <div class="container">
+        <h1>Update einen Eintrag!</h1>
+        <section>
+            <form method="post">
+                <div>
+                    <label for="time">Zeitpunkt der Prüfung:</label>
+                    <input type="time" id="time" th:field="${entryForm.time}">
+                </div>
+
+                <div>
+                    <label for="firstname">Vorname des Kandidatens:</label>
+                    <input type="text" id="firstname" th:field="${entryForm.firstname}">
+                </div>
+                <div th:if="${#fields.hasErrors('entryForm.firstname')}"
+                     th:text="${#strings.listJoin(#fields.errors('entryForm.firstname'), ', ')}">
+                </div>
+
+                <div>
+                    <label for="lastname">Nachname des Kandidatens:</label>
+                    <input type="text" id="lastname" th:field="${entryForm.lastname}">
+                </div>
+                <div th:if="${#fields.hasErrors('entryForm.lastname')}"
+                     th:text="${#strings.listJoin(#fields.errors('entryForm.lastname'), ', ')}">
+                </div>
+
+                <div>
+                    <label for="meetingLink">Link zum Meeting:</label>
+                    <input type="text" id="meetingLink" th:field="${entryForm.meetingLink}">
+                </div>
+                <div th:if="${#fields.hasErrors('entryForm.meetingLink')}"
+                     th:text="${#strings.listJoin(#fields.errors('entryForm.meetingLink'), ', ')}">
+                </div>
+
+                <div>
+                    <label for="email">Email des Kandidatens</label>
+                    <input type="email" id="email" th:field="${entryForm.email}">
+                </div>
+                <div th:if="${#fields.hasErrors('entryForm.email')}"
+                     th:text="${#strings.listJoin(#fields.errors('entryForm.email'), ', ')}">
+                </div>
+
+                <div>
+                    <label for="uploads">Link zu den Uploads des Kandidaten</label>
+                    <input type="text" id="uploads" th:field="${entryForm.uploads}">
+                </div>
+                <div th:if="${#fields.hasErrors('entryForm.uploads')}"
+                     th:text="${#strings.listJoin(#fields.errors('entryForm.uploads'), ', ')}">
+                </div>
+
+                <button class="btn btn-primary" type="submit">Updaten</button>
+                <button class="btn btn-secondary"><a th:href="@{/department/show/{id}(id=${departmentId})}" style="color: white; text-decoration: none">Zurück</a></button>
+            </form>
+        </section>
+    </div>
+</main>
+</body>
+</html>
